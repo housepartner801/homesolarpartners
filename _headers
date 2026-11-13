@@ -4,8 +4,20 @@
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
+# Images and PDFs: 1 day
 /assets/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=86400
 
+# Stylesheet and script: 1 hour (pages also link them with ?v=<version>)
+/assets/css/*
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+
+/assets/js/*
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+
+# Fonts never change
 /assets/fonts/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
