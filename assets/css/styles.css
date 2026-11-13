@@ -533,3 +533,77 @@ details p { padding: 0 20px 18px; margin: 0; color: var(--muted); font-size: .98
 .legal-header .header-inner { justify-content: space-between; }
 .legal-list { list-style: disc; padding-left: 1.25em; margin-bottom: 1em; }
 .legal-list li { margin-bottom: .5em; }
+
+/* ---------- Sunrun ambassador strip ---------- */
+.ambassador-bar { background: var(--navy-950); color: #fff; }
+.ambassador-inner {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 6px 10px; min-height: 40px; padding-block: 8px;
+  font-family: var(--font-head); font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+}
+.ambassador-hsp { color: var(--gold); }
+.ambassador-sep { width: 1px; height: 16px; background: rgba(255, 255, 255, .35); }
+.ambassador-label { color: rgba(255, 255, 255, .9); }
+.ambassador-logo { height: 15px; width: auto; }
+@media (max-width: 520px) {
+  .ambassador-inner { font-size: .68rem; letter-spacing: .05em; gap: 4px 7px; }
+  .ambassador-hsp, .ambassador-sep { display: none; }
+  .ambassador-logo { height: 13px; }
+}
+
+/* ---------- Sunrun flyer features ---------- */
+.flyer-feature {
+  display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: clamp(28px, 5vw, 56px); align-items: center;
+  margin-top: clamp(48px, 7vw, 80px); padding: clamp(24px, 4vw, 44px);
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+}
+.flyer-feature-dark {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  background: rgba(255, 255, 255, .05); border-color: rgba(255, 255, 255, .14); box-shadow: none;
+}
+.flyer-thumb {
+  display: block; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg);
+  transform: rotate(-1.5deg); transition: transform .25s ease, box-shadow .25s ease;
+}
+.flyer-feature-dark .flyer-thumb { transform: rotate(1.5deg); }
+.flyer-thumb:hover { transform: rotate(0) translateY(-4px); }
+.flyer-thumb img { width: 100%; }
+.flyer-source {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+  font-family: var(--font-head); font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+}
+.flyer-source img { height: 18px; width: auto; }
+.flyer-source span { padding-left: 12px; border-left: 1px solid var(--line); }
+.flyer-copy h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); line-height: 1.25; }
+.flyer-copy > p { color: var(--muted); }
+.flyer-copy .btn { margin: 6px 0 18px; }
+.btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
+.btn-outline:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
+.flyer-feature-dark .flyer-source { color: rgba(255, 255, 255, .7); }
+.flyer-feature-dark .flyer-source span { border-left-color: rgba(255, 255, 255, .25); }
+.flyer-feature-dark .flyer-copy > p { color: rgba(255, 255, 255, .78); }
+.flyer-feature-dark .fine-print { color: rgba(255, 255, 255, .6); font-size: .78rem; }
+.flyer-feature-dark sup { color: var(--gold); }
+.flyer-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; }
+.flyer-actions .btn { margin: 0; }
+.flyer-actions .text-link { margin: 0; color: #fff; }
+.flyer-feature-dark .fine-print { margin-top: 20px; }
+.check-list { display: grid; gap: 10px; margin: 4px 0 24px; }
+.check-list li { position: relative; padding-left: 30px; color: rgba(255, 255, 255, .88); }
+.check-list li::before {
+  content: ""; position: absolute; left: 4px; top: .35em; width: 12px; height: 7px;
+  border-left: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(-45deg);
+}
+@media (max-width: 820px) {
+  .flyer-feature, .flyer-feature-dark { grid-template-columns: 1fr; }
+  .flyer-thumb { max-width: 300px; margin-inline: auto; }
+  .flyer-feature-dark .flyer-thumb { order: -1; }
+  .flyer-copy .btn, .flyer-actions .btn { width: 100%; }
+}
+
+/* ---------- Brand logos in How It Works / Why Sunrun ---------- */
+.flow-logo { display: flex; align-items: center; justify-content: center; height: 78px; margin: 0 auto 18px; }
+.flow-logo img { width: auto; }
+.flow-logo-hsp { height: 72px; }
+.flow-logo-sunrun { height: 26px; }
+.why-sunrun-logo { display: block; height: 34px; width: auto; margin: 4px auto 22px; }
