@@ -172,7 +172,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .site-header.is-scrolled { border-bottom-color: var(--line); box-shadow: 0 6px 20px -14px rgba(11, 35, 65, .3); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); gap: 24px; }
 .brand { display: flex; align-items: center; gap: 18px; text-decoration: none; flex: none; }
-.brand-hsp { width: 150px; height: auto; }
+.brand { --hsp-w: 150px; }
+.brand-hsp { width: var(--hsp-w); height: auto; }
+/* Center the Sunrun side on the "Home Solar" lettering, not the whole logo (which includes the sun rays above) */
+.brand-tie, .brand-sunrun { transform: translateY(calc(var(--hsp-w) * .049)); }
 .brand-tie { display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--navy); }
 .brand-tie-text {
   font-family: var(--font-head); font-style: italic; font-weight: 600;
@@ -214,7 +217,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 1180px) {
   :root { --header-h: 68px; }
   .brand { gap: 10px; flex: 0 1 auto; min-width: 0; }
-  .brand-hsp { width: 112px; }
+  .brand { --hsp-w: 112px; }
   .brand-tie-text { font-size: .52rem; }
   .brand-tie-arrow { width: 34px; }
   .brand-sunrun { width: 76px; }
@@ -628,7 +631,7 @@ details p { padding: 0 20px 18px; margin: 0; color: var(--muted); font-size: .98
   .site-nav ul { gap: 16px; }
   .site-nav ul a { font-size: .88rem; }
   .brand { gap: 12px; }
-  .brand-hsp { width: 128px; }
+  .brand { --hsp-w: 128px; }
   .brand-tie-text { font-size: .56rem; }
   .brand-tie-arrow { width: 40px; }
   .brand-sunrun { width: 86px; }
@@ -638,7 +641,7 @@ details p { padding: 0 20px 18px; margin: 0; color: var(--muted); font-size: .98
 }
 @media (max-width: 420px) {
   .brand { gap: 8px; }
-  .brand-hsp { width: 100px; }
+  .brand { --hsp-w: 100px; }
   .brand-tie-text { font-size: .48rem; }
   .brand-tie-arrow { width: 30px; }
   .brand-sunrun { width: 62px; }
