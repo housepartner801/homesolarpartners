@@ -9,7 +9,7 @@ A static, single-page site (HTML/CSS/JS, no build step) hosted on Cloudflare Pag
 - `_headers` sets security headers and asset caching; `404.html` is served automatically for unknown paths.
 
 ## Updating styles or scripts
-Pages link the stylesheet and script with a version tag, e.g. `styles.css?v=91a3a7f`.
+Pages link the stylesheet and script with a version tag, e.g. `styles.css?v=d029341`.
 Whenever you change `assets/css/styles.css` or `assets/js/main.js`, change that `?v=` value
 in `index.html`, `privacy.html`, `terms.html` and `404.html` so returning visitors get the new file.
 

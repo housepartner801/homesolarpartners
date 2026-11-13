@@ -534,23 +534,6 @@ details p { padding: 0 20px 18px; margin: 0; color: var(--muted); font-size: .98
 .legal-list { list-style: disc; padding-left: 1.25em; margin-bottom: 1em; }
 .legal-list li { margin-bottom: .5em; }
 
-/* ---------- Sunrun ambassador strip ---------- */
-.ambassador-bar { background: var(--navy-950); color: #fff; }
-.ambassador-inner {
-  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
-  gap: 6px 10px; min-height: 40px; padding-block: 8px;
-  font-family: var(--font-head); font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-}
-.ambassador-hsp { color: var(--gold); }
-.ambassador-sep { width: 1px; height: 16px; background: rgba(255, 255, 255, .35); }
-.ambassador-label { color: rgba(255, 255, 255, .9); }
-.ambassador-logo { height: 15px; width: auto; }
-@media (max-width: 520px) {
-  .ambassador-inner { font-size: .68rem; letter-spacing: .05em; gap: 4px 7px; }
-  .ambassador-hsp, .ambassador-sep { display: none; }
-  .ambassador-logo { height: 13px; }
-}
-
 /* ---------- Sunrun flyer features ---------- */
 .flyer-feature {
   display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: clamp(28px, 5vw, 56px); align-items: center;
