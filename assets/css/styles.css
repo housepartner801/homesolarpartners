@@ -507,7 +507,8 @@ details p { padding: 0 20px 18px; margin: 0; color: var(--muted); font-size: .98
 .final { background: #fff; }
 .final-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .final-card {
-  border-radius: var(--radius-lg); padding: clamp(28px, 4vw, 44px);
+  --pad: clamp(28px, 4vw, 44px);
+  border-radius: var(--radius-lg); padding: var(--pad); overflow: hidden;
   display: flex; flex-direction: column; align-items: flex-start;
   transition: transform .2s ease, box-shadow .2s ease;
 }
@@ -516,7 +517,17 @@ details p { padding: 0 20px 18px; margin: 0; color: var(--muted); font-size: .98
 .final-home { background: linear-gradient(140deg, var(--gold-50), #FFF1C9); border: 1px solid #F8E3A8; }
 .final-biz { background: linear-gradient(140deg, var(--navy), var(--navy-700)); color: #fff; }
 .final-biz h3 { color: #fff; }
-.final-biz .qr-tag { background: rgba(245, 181, 10, .15); border-color: rgba(245, 181, 10, .35); color: var(--gold); }
+/* Audience band across the top of each final card */
+.final-band {
+  align-self: stretch; display: flex; align-items: center; gap: 10px;
+  margin: calc(var(--pad) * -1) calc(var(--pad) * -1) 26px; padding: 14px var(--pad);
+  font-family: var(--font-head); font-size: .95rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--navy);
+}
+.final-band .icon { width: 22px; height: 22px; }
+.final-home .final-band { background: var(--gold); }
+.final-biz .final-band { background: #fff; border-bottom: 1px solid var(--line); }
+.final-biz { border: 2px solid var(--navy); }
 .final-biz .text-link { color: rgba(255, 255, 255, .85); }
 .final-home .text-link { color: var(--navy-600); }
 @media (max-width: 760px) {
