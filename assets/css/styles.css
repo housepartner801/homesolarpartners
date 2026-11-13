@@ -240,7 +240,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     linear-gradient(0deg, rgba(7, 24, 48, .55) 0%, rgba(7, 24, 48, 0) 40%);
 }
 .hero-inner { max-width: calc(var(--container) + var(--gutter) * 2); }
-.hero h1 { color: #fff; max-width: 14ch; margin-bottom: 20px; }
+.hero h1 { color: #fff; max-width: 22ch; margin-bottom: 20px; }
 .hero-lede { font-size: clamp(1.1rem, 1.9vw, 1.3rem); color: rgba(255, 255, 255, .88); max-width: 34em; margin-bottom: 36px; }
 
 .hero-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 370px)); gap: 16px; }
@@ -251,15 +251,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
 }
 .path-card:hover { transform: translateY(-3px); }
-.path-home { background: var(--gold); color: var(--navy); box-shadow: 0 14px 30px -12px rgba(245, 181, 10, .6); }
-.path-home:hover { background: #FFC21F; }
-.path-biz { background: rgba(255, 255, 255, .1); border: 1.5px solid rgba(255, 255, 255, .45); backdrop-filter: blur(6px); }
-.path-biz:hover { background: rgba(255, 255, 255, .18); border-color: #fff; }
+/* Both audience paths share identical styling so neither is emphasized over the other */
+.path-card { background: var(--gold); color: var(--navy); box-shadow: 0 14px 30px -12px rgba(245, 181, 10, .6); }
+.path-card:hover { background: #FFC21F; }
 .path-icon {
   display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; flex: none;
+  background: rgba(11, 35, 65, .1);
 }
-.path-home .path-icon { background: rgba(11, 35, 65, .1); }
-.path-biz .path-icon { background: rgba(255, 255, 255, .14); color: var(--gold); }
 .path-icon .icon { width: 24px; height: 24px; }
 .path-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .path-label { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
