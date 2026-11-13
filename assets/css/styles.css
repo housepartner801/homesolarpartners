@@ -258,24 +258,30 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero-lede { font-size: clamp(1.1rem, 1.9vw, 1.3rem); color: rgba(255, 255, 255, .88); max-width: 34em; margin-bottom: 36px; }
 
 .hero-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 370px)); gap: 16px; }
+/* Both audience paths share identical styling: white label band on top, gold body below */
 .path-card {
-  display: flex; align-items: center; gap: 14px;
-  padding: 18px 20px; border-radius: var(--radius);
-  text-decoration: none; color: inherit;
-  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+  display: flex; flex-direction: column; overflow: hidden;
+  border-radius: var(--radius); text-decoration: none; color: var(--navy);
+  background: var(--gold); box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .45);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.path-card:hover { transform: translateY(-3px); }
-/* Both audience paths share identical styling so neither is emphasized over the other */
-.path-card { background: var(--gold); color: var(--navy); box-shadow: 0 14px 30px -12px rgba(245, 181, 10, .6); }
-.path-card:hover { background: #FFC21F; }
+.path-card:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -12px rgba(0, 0, 0, .5); }
+.path-label {
+  display: block; background: #fff; color: var(--navy);
+  padding: 9px 20px; font-family: var(--font-head);
+  font-size: .8rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+}
+.path-body {
+  display: flex; align-items: center; gap: 14px; flex: 1;
+  padding: 16px 20px; transition: background-color .2s ease;
+}
+.path-card:hover .path-body { background: #FFC21F; }
 .path-icon {
-  display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; flex: none;
-  background: rgba(11, 35, 65, .1);
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; flex: none;
+  background: rgba(11, 35, 65, .12);
 }
 .path-icon .icon { width: 24px; height: 24px; }
-.path-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
-.path-label { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
-.path-cta { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; line-height: 1.3; }
+.path-cta { flex: 1; min-width: 0; font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; line-height: 1.3; }
 .path-arrow { transition: transform .2s ease; }
 .path-card:hover .path-arrow { transform: translateX(4px); }
 
