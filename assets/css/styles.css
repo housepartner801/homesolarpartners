@@ -600,3 +600,10 @@ details p { padding: 0 20px 18px; margin: 0; color: var(--muted); font-size: .98
   .flyer-feature-dark .flyer-thumb { order: -1; }
   .flyer-copy .btn, .flyer-actions .btn { width: 100%; }
 }
+
+/* ---------- Brand logos in How It Works / Why Sunrun ---------- */
+.flow-logo { display: flex; align-items: center; justify-content: center; height: 78px; margin: 0 auto 18px; }
+.flow-logo img { width: auto; }
+.flow-logo-hsp { height: 72px; }
+.flow-logo-sunrun { height: 26px; }
+.why-sunrun-logo { display: block; height: 34px; width: auto; margin: 4px auto 22px; }
