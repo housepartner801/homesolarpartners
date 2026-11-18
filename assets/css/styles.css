@@ -795,3 +795,31 @@ summary { font-weight: 600; }
 
 /* Footer */
 .site-footer { background: var(--night); }
+
+/* ---------- The Sunrun Solution (video) ---------- */
+.video-section { background: var(--night); color: rgba(255, 255, 255, .85); }
+.video-section h2 { color: #fff; }
+.video-section .section-lede { color: rgba(255, 255, 255, .75); }
+.video-section .fine-print { color: rgba(255, 255, 255, .55); margin-top: 18px; }
+.video-frame {
+  position: relative; max-width: 1040px; margin-inline: auto;
+  aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden;
+  background: #000; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .8);
+}
+.sunrun-video { display: block; width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+.sunrun-video[controls] { cursor: auto; }
+.video-sound {
+  position: absolute; left: 20px; bottom: 20px;
+  display: inline-flex; align-items: center; gap: .5em;
+  padding: .7em 1.15em; border: 0; border-radius: 999px; cursor: pointer;
+  background: rgba(255, 255, 255, .94); color: var(--night);
+  font-family: var(--font-head); font-weight: 600; font-size: .95rem;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, .6);
+  transition: background-color .2s ease, transform .2s ease;
+}
+.video-sound:hover { background: var(--gold); }
+.video-sound[hidden] { display: none; }
+@media (max-width: 520px) {
+  .video-frame { border-radius: var(--radius); }
+  .video-sound { left: 12px; bottom: 12px; font-size: .85rem; }
+}
