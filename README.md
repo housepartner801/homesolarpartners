@@ -20,7 +20,7 @@ privacy.html          Privacy Policy
 terms.html            Terms of Use
 404.html              Not-found page
 assets/css/styles.css
-assets/js/main.js     Mobile nav, header shadow, active-section highlight (site works without JS)
+assets/js/main.js     Mobile nav, header shadow, active-section highlight, video autoplay/sound (site works without JS)
 assets/fonts/         Self-hosted Montserrat (SIL Open Font License)
 assets/img/           Logo, photos, QR codes, social image
 favicon.ico / favicon.svg / apple-touch-icon.png / site.webmanifest

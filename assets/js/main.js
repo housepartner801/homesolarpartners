@@ -60,6 +60,56 @@
     Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
   }
 
+  // "The Sunrun Solution" video: plays muted while in view; a click turns sound on and restarts it
+  var video = document.querySelector('.sunrun-video');
+  var soundBtn = document.querySelector('.video-sound');
+  if (video && soundBtn) {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var withSound = false;
+    var wantPlay = !reduceMotion;
+
+    var enableSound = function () {
+      if (withSound) return;
+      withSound = true;
+      soundBtn.hidden = true;
+      video.muted = false;
+      video.controls = true;
+      video.loop = false;
+      video.currentTime = 0;
+      wantPlay = true;
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    };
+
+    if (!reduceMotion) {
+      video.controls = false;
+      video.loop = true;
+      soundBtn.hidden = false;
+      video.addEventListener('click', function () { if (!withSound) enableSound(); });
+    }
+    soundBtn.addEventListener('click', enableSound);
+    video.addEventListener('volumechange', function () { if (!video.muted && !withSound) enableSound(); });
+    video.addEventListener('ended', function () { video.loop = false; });
+
+    // Remember whether the viewer paused it themselves, so scrolling back doesn't override them
+    video.addEventListener('pause', function () { if (video.dataset.autoPaused !== '1') wantPlay = false; video.dataset.autoPaused = ''; });
+    video.addEventListener('play', function () { wantPlay = true; });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && wantPlay && video.paused) {
+            var p = video.play();
+            if (p && p.catch) p.catch(function () {});
+          } else if (!entry.isIntersecting && !video.paused) {
+            video.dataset.autoPaused = '1';
+            video.pause();
+          }
+        });
+      }, { threshold: 0.35 }).observe(video);
+    }
+  }
+
   // Current year in footer
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
