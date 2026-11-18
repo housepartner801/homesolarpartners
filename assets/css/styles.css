@@ -823,3 +823,14 @@ summary { font-weight: 600; }
   .video-frame { border-radius: var(--radius); }
   .video-sound { left: 12px; bottom: 12px; font-size: .85rem; }
 }
+
+/* Final CTA cards: centered, balanced headlines, matching full-width buttons */
+.final-card { align-items: center; text-align: center; }
+.final-band { justify-content: center; }
+.final-card h3 { text-wrap: balance; max-width: 26ch; margin-inline: auto; }
+.final-card .btn { width: 100%; max-width: 480px; }
+.final-card .text-link { margin-top: 16px; }
+.final-card .btn, .final-card .text-link { text-wrap: balance; }
+@media (max-width: 520px) {
+  .final-card .btn-lg { font-size: .98rem; padding: .95em 1.15em; }
+}
