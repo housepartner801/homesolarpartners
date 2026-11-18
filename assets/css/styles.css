@@ -837,3 +837,10 @@ summary { font-weight: 600; }
 
 /* Hero photo: on narrow screens, crop toward the sunset on the right */
 @media (max-width: 720px) { .hero-media img { object-position: 80% 40%; } }
+
+/* QR cards: clip the top accent bar to the card's rounded corners so it sits flush,
+   and give the partner card the same solid gold bar as the homeowner card */
+.qr-card { overflow: hidden; }
+.qr-card::before { inset: 0 0 auto 0; height: 6px; border-radius: 0; }
+.qr-card-biz::before { background: var(--gold); }
+.partners .qr-card { border-color: transparent; }
