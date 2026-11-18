@@ -646,3 +646,152 @@ details p { padding: 0 20px 18px; margin: 0; color: var(--muted); font-size: .98
   .brand-tie-arrow { width: 30px; }
   .brand-sunrun { width: 62px; }
 }
+
+/* =========================================================
+   Sunrun-inspired refresh: warm cream canvas, near-black navy
+   sections, lighter large headlines, plain eyebrows, flat pill
+   buttons, thin line icons, divider columns. Overrides above.
+   ========================================================= */
+:root {
+  --cream: #FFFDF6;
+  --sand: #F4EFE3;
+  --night: #0A1020;
+  --night-700: #151C30;
+  --sky: var(--sand);
+  --line: #E7E0D0;
+  --line-dark: rgba(255, 255, 255, .14);
+  --body: #3B4352;
+  --muted: #5F6573;
+  --shadow-sm: none;
+  --shadow: 0 12px 32px -18px rgba(10, 16, 32, .28);
+  --shadow-lg: 0 20px 48px -24px rgba(10, 16, 32, .35);
+  --radius: 18px;
+  --radius-lg: 22px;
+}
+body { background: var(--cream); }
+
+/* Headlines: large, lighter, tightly tracked */
+h1, h2, h3, h4 { letter-spacing: -0.025em; }
+h1 { font-weight: 600; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.06; letter-spacing: -0.035em; }
+h2 { font-weight: 600; font-size: clamp(2rem, 4.2vw, 3.25rem); line-height: 1.1; letter-spacing: -0.03em; }
+h3, h4 { font-weight: 600; }
+.section-lede { color: var(--muted); }
+
+/* Thin line icons */
+.icon { stroke-width: 1.6; }
+
+/* Eyebrows: plain small caps label (hero badge keeps its pill) */
+.eyebrow {
+  background: none; border: 0; padding: 0; border-radius: 0;
+  font-size: .78rem; letter-spacing: .1em; color: var(--muted); margin-bottom: 14px;
+}
+.eyebrow .icon { color: var(--gold-600); }
+.eyebrow-light { color: rgba(255, 255, 255, .7); backdrop-filter: none; }
+.hero .eyebrow {
+  color: #fff; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .22);
+  padding: .45em .9em; border-radius: 999px; backdrop-filter: blur(4px); margin-bottom: 18px;
+}
+
+/* Buttons: flat pills */
+.btn { font-weight: 600; }
+.btn-gold { box-shadow: none; }
+.btn-gold:hover { box-shadow: none; transform: none; background: #FFC21F; }
+.btn-navy { background: var(--night); color: #fff; }
+.btn-navy:hover { background: var(--navy-600); }
+.btn-outline { border-width: 1.5px; }
+.btn-outline:hover { transform: none; }
+.site-header .btn-gold { background: var(--night); color: #fff; }
+.site-header .btn-gold:hover { background: var(--navy-600); }
+
+/* Header: cream bar with a hairline */
+.site-header { background: rgba(255, 253, 246, .94); border-bottom-color: var(--line); }
+.site-header.is-scrolled { box-shadow: none; }
+.site-nav ul a { font-weight: 500; color: var(--night); }
+.nav-toggle { background: var(--cream); border-color: var(--line); border-radius: 999px; }
+@media (max-width: 1180px) { .site-nav { background: var(--cream); } }
+
+/* Hero: let the photo breathe a little more */
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(10, 16, 32, .86) 0%, rgba(10, 16, 32, .7) 40%, rgba(10, 16, 32, .3) 72%, rgba(10, 16, 32, .1) 100%),
+    linear-gradient(0deg, rgba(10, 16, 32, .45) 0%, rgba(10, 16, 32, 0) 40%);
+}
+@media (max-width: 720px) {
+  .hero-overlay { background: linear-gradient(180deg, rgba(10, 16, 32, .4) 0%, rgba(10, 16, 32, .85) 55%, rgba(10, 16, 32, .94) 100%); }
+}
+.path-card { box-shadow: 0 14px 30px -16px rgba(0, 0, 0, .5); }
+
+/* Trust strip: near-black with divider columns */
+.trust { background: var(--night); border-top: 0; }
+.trust-grid { gap: 0; padding-block: 36px; }
+.trust-item { padding-inline: 24px; border-left: 1px solid var(--line-dark); }
+.trust-item:first-child { border-left: 0; padding-left: 0; }
+.trust-item strong { font-weight: 600; }
+@media (max-width: 960px) {
+  .trust-grid { row-gap: 24px; }
+  .trust-item:nth-child(odd) { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 520px) {
+  .trust-item { border-left: 0; padding-inline: 0; }
+  .trust-item + .trust-item { border-top: 1px solid var(--line-dark); padding-top: 20px; }
+  .trust-grid { row-gap: 20px; }
+}
+
+/* Flat warm cards */
+.flow-step { border-color: var(--line); box-shadow: none; }
+.flow-step-brand { border: 1.5px solid var(--gold); box-shadow: none; }
+.flow-badge { background: var(--night); border-radius: 999px; }
+.steps-wrap, .flyer-feature { background: #fff; border-color: var(--line); box-shadow: none; }
+.steps-dark, .flyer-feature-dark { background: var(--night-700); border-color: var(--line-dark); }
+.step-num { background: var(--night); font-weight: 700; }
+.qr-card { border-color: var(--line); box-shadow: var(--shadow); }
+.qr-tag, .eyebrow + .qr-tag { background: var(--sand); border-color: var(--line); }
+.photo-card { box-shadow: none; }
+.flyer-thumb { box-shadow: var(--shadow); }
+
+/* Benefit icons: outlined circles */
+.benefit-icon { border-radius: 999px; background: transparent; border: 1px solid var(--line); color: var(--gold-600); }
+.benefits-dark .benefit-icon { background: transparent; border-color: rgba(245, 181, 10, .4); }
+
+/* Sections */
+.homeowners { background: var(--cream); }
+.partners { background: var(--night); }
+.chips li { font-weight: 500; }
+
+/* Why Sunrun: flat facts, divider-column offerings */
+.fact { background: var(--sand); border-color: transparent; }
+.fact-value { font-weight: 600; letter-spacing: -0.03em; color: var(--night); }
+.offer-grid { gap: 0; margin-top: 12px; }
+.offer {
+  background: none; border: 0; border-radius: 0; padding: 8px 28px 4px;
+  border-left: 1px solid var(--line);
+}
+.offer:first-child { border-left: 0; padding-left: 0; }
+.offer:hover { transform: none; box-shadow: none; }
+.offer .benefit-icon { border: 0; width: auto; height: auto; justify-content: start; margin-bottom: 22px; }
+.offer .benefit-icon .icon { width: 34px; height: 34px; }
+.offer h3 { font-size: 1.2rem; }
+@media (max-width: 960px) {
+  .offer-grid { row-gap: 32px; }
+  .offer:nth-child(odd) { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 640px) {
+  .offer { border-left: 0; padding-inline: 0; }
+  .offer + .offer { border-top: 1px solid var(--line); padding-top: 28px; }
+}
+
+/* FAQ */
+.faq { background: var(--sand); }
+details { border-color: var(--line); border-radius: 14px; }
+details[open] { box-shadow: none; border-color: #D8CFBB; }
+summary { font-weight: 600; }
+
+/* Final CTA */
+.final { background: var(--cream); }
+.final-card:hover { transform: none; box-shadow: var(--shadow); }
+.final-home { background: #FFF6DA; border-color: #F3E2AE; }
+.final-biz { background: var(--night); border-color: var(--night); }
+.final-band { font-weight: 700; }
+
+/* Footer */
+.site-footer { background: var(--night); }
