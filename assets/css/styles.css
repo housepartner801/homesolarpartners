@@ -834,3 +834,6 @@ summary { font-weight: 600; }
 @media (max-width: 520px) {
   .final-card .btn-lg { font-size: .98rem; padding: .95em 1.15em; }
 }
+
+/* Hero photo: on narrow screens, crop toward the sunset on the right */
+@media (max-width: 720px) { .hero-media img { object-position: 80% 40%; } }

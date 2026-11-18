@@ -46,4 +46,4 @@ If either destination changes, update every link that points to it in `index.htm
 - **"Why Sunrun" figures** come from sunrun.com/about-us and investors.sunrun.com (customer count dated August 2024). Recheck periodically.
 
 ## Credits
-Photography: hero and social image supplied by Home Solar Partners (installers mounting all-black panels; mirrored). Residential installation photo: U.S. Department of Energy (public domain), via the DOE Flickr account.
+Photography: hero and social image supplied by Home Solar Partners (all-black rooftop panels at sunset; mirrored). Residential installation photo: U.S. Department of Energy (public domain), via the DOE Flickr account.
